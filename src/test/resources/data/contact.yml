@@ -1,0 +1,24 @@
+    name: Contatos
+    columns:
+      - name: nome
+        type: varchar
+        length: 120
+        
+      - name: sobrenome
+        type: varchar
+        length: 440
+        
+      - name: idade
+        type: integer
+        length: 210
+        
+      - name: cpf
+        type: varchar
+        length: 420
+        
+      - name: batata
+        type: vachar2
+        length: 600
+    
+    
+    
