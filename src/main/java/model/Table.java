@@ -58,8 +58,8 @@ public class Table {
 		StringBuilder sb = new StringBuilder();
 		//this.table é o META-DADOS ORIGINAL
 		//table é o META-DADOS obtido de uma tabela do banco
-		for (Column column : this.columns){
-			for (Column column2 : table.columns){
+		this.columns.forEach(column -> {
+			table.columns.forEach(column2 -> {
 				if (column.getName().equals(column2.getName())){
 					column.setModify(true);
 					if (column.getType().equals(column2.getType())){
@@ -73,11 +73,11 @@ public class Table {
 						throw new MismatchedColumnTypeException("unable to convert type of column: " + column.getName());
 					}
 				}
-			}
+			});
 			if (!column.isModify()) {
 				sb.append("ALTER TABLE ").append(this.name).append(" add ").append(column.getName()).append(" ").append(column.getType()).append("(").append(column.getLength()).append("); \n");
 			}
-		}
+		});
 		return sb.toString();
 	}
 } 
