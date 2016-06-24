@@ -2,19 +2,23 @@
     columns:
       - name: nome
         type: varchar
-        length: 20
+        length: 120
         
       - name: sobrenome
         type: varchar
-        length: 20
+        length: 440
         
       - name: idade
         type: integer
-        length: 3
+        length: 210
         
       - name: cpf
         type: varchar
-        length: 30
+        length: 420
+        
+      - name: batata
+        type: vachar2
+        length: 600
     
     
     
