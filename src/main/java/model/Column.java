@@ -1,9 +1,21 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Column {
 	private String name;
 	private String type;
 	private int length;
+	
+	@JsonIgnore
+	private boolean modify;
+	
+	public boolean isModify() {
+		return modify;
+	}
+	public void setModify(boolean modify) {
+		this.modify = modify;
+	}
 	public String getName() {
 		return name;
 	}
