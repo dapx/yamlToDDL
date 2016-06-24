@@ -9,8 +9,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
-import exception.LengthDecreaseException;
-import exception.MismatchedTypeException;
+import exception.LengthColumnDecreaseException;
+import exception.MismatchedColumnTypeException;
 import model.Table;
 
 public class RunExec {
@@ -22,10 +22,10 @@ public class RunExec {
 			//System.out.println(table.createTable());
 			System.out.println(table.alterTable());
 			Table table2 = mapper.readValue(new FileReader("/home/dap/workspace/create-dict/create-dict/src/main/resources/data/contact2.yml"), Table.class);
-			System.out.println(table.compareWith(table));
-		} catch (MismatchedTypeException ex){
+			System.out.println(table.compareWith(table2));
+		} catch (MismatchedColumnTypeException ex){
 			System.out.println(ex.getMessage());
-		} catch (LengthDecreaseException ex){
+		} catch (LengthColumnDecreaseException ex){
 			System.out.println(ex.getMessage());
 		} catch (JsonParseException ex) {
 			System.out.println(ex.getMessage());

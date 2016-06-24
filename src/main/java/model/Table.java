@@ -2,8 +2,8 @@ package model;
 
 import java.util.List;
 
-import exception.MismatchedTypeException;
-import exception.LengthDecreaseException;
+import exception.MismatchedColumnTypeException;
+import exception.LengthColumnDecreaseException;
 
 public class Table {
 	private String name;
@@ -65,12 +65,12 @@ public class Table {
 					if (column.getType().equals(column2.getType())){
 						//Na linha abaixo ele verifica se a coluna de mesmo nome e tipo da tabela original(atualizada) é menor que a que está no banco
 						if (column.getLength() < column2.getLength()){
-							throw new LengthDecreaseException("unable to decrease size of column: " + column.getName());
+							throw new LengthColumnDecreaseException("unable to decrease size of column: " + column.getName());
 						} else if (column.getLength() > column2.getLength()) {
 							sb.append("ALTER TABLE ").append(this.name).append(" modify ").append(column.getName()).append(" ").append(column.getType()).append("(").append(column.getLength()).append("); \n");
 						}
 					} else {
-						throw new MismatchedTypeException("unable to convert type of column: " + column.getName());
+						throw new MismatchedColumnTypeException("unable to convert type of column: " + column.getName());
 					}
 				}
 			}
