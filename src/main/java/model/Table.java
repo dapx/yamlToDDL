@@ -56,6 +56,7 @@ public class Table {
 	//VOU REMOVER ESSE METODO HORRIVEL ||| FIQUE TRANQUILO
 	public String compareWith(Table table){
 		StringBuilder sb = new StringBuilder();
+		StringBuilder primaryKeys = new StringBuilder(); 
 		//this.table é o META-DADOS ORIGINAL
 		//table é o META-DADOS obtido de uma tabela do banco
 		this.columns.forEach(column -> {
@@ -77,7 +78,12 @@ public class Table {
 			if (!column.isModify()) {
 				sb.append("ALTER TABLE ").append(this.name).append(" add ").append(column.getName()).append(" ").append(column.getType()).append("(").append(column.getLength()).append("); \n");
 			}
+			if (column.isPk()){
+				primaryKeys.append(column.getName()).append(",");
+			}
 		});
+		primaryKeys.deleteCharAt(primaryKeys.length()-1);
+		sb.append("ALTER TABLE ").append(this.name).append(" ADD CONSTRAINT PK_").append(this.name).append(" (").append(primaryKeys.toString()).append(");");
 		return sb.toString();
 	}
 } 

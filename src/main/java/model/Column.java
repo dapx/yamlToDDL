@@ -6,7 +6,14 @@ public class Column {
 	private String name;
 	private String type;
 	private int length;
+	private boolean pk;
 	
+	public boolean isPk() {
+		return pk;
+	}
+	public void setPk(boolean pk) {
+		this.pk = pk;
+	}
 	@JsonIgnore
 	private boolean modify;
 	
