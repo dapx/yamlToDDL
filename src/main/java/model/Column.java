@@ -7,6 +7,8 @@ public class Column {
 	private String type;
 	private int length;
 	private boolean pk;
+	private String parentTableName;
+	private String parentColumnName;
 	
 	public boolean isPk() {
 		return pk;
@@ -40,6 +42,18 @@ public class Column {
 	}
 	public void setLength(int length) {
 		this.length = length;
+	}
+	public String getParentTableName() {
+		return parentTableName;
+	}
+	public void setParentTableName(String parentTableName) {
+		this.parentTableName = parentTableName;
+	}
+	public String getParentColumnName() {
+		return parentColumnName;
+	}
+	public void setParentColumn(String parentColumnName) {
+		this.parentColumnName = parentColumnName;
 	}
 	
 	

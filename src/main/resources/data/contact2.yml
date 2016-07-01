@@ -1,7 +1,7 @@
-    name: Contatos
+    name: contatos2
     columns:
       - name: nome
-        type: int
+        type: varchar
         length: 10
         
       - name: sobrenome

@@ -56,7 +56,8 @@ public class Table {
 	//VOU REMOVER ESSE METODO HORRIVEL ||| FIQUE TRANQUILO
 	public String compareWith(Table table){
 		StringBuilder sb = new StringBuilder();
-		StringBuilder primaryKeys = new StringBuilder(); 
+		StringBuilder primaryKeys = new StringBuilder();
+		StringBuilder foreignKeys = new StringBuilder();
 		//this.table é o META-DADOS ORIGINAL
 		//table é o META-DADOS obtido de uma tabela do banco
 		this.columns.forEach(column -> {
@@ -81,9 +82,13 @@ public class Table {
 			if (column.isPk()){
 				primaryKeys.append(column.getName()).append(",");
 			}
+			if (column.getParentColumnName() != null && !column.getParentColumnName().isEmpty()){
+				foreignKeys.append("ALTER TABLE ").append(this.name).append(" ADD CONSTRAINT FK_").append(this.name).append("_").append(column.getName()).append(" FOREIGN KEY (").append(column.getName()).append(") REFERENCES ").append(column.getParentTableName()).append("(").append(column.getParentColumnName()).append("); \n ");
+			}
 		});
 		primaryKeys.deleteCharAt(primaryKeys.length()-1);
-		sb.append("ALTER TABLE ").append(this.name).append(" ADD CONSTRAINT PK_").append(this.name).append(" (").append(primaryKeys.toString()).append(");");
+		sb.append("ALTER TABLE ").append(this.name).append(" ADD CONSTRAINT PK_").append(this.name).append(" (").append(primaryKeys.toString()).append("); \n");
+		sb.append(foreignKeys.toString());
 		return sb.toString();
 	}
 } 

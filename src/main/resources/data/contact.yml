@@ -1,13 +1,16 @@
-    name: Contatos
+    name: contatos
     columns:
-      - name: nome
+      - name: nome #coluna tem nome = nome
         type: varchar
         length: 120
+        pk: true
         
       - name: sobrenome
         type: varchar
         length: 440
-        
+        parentTableName: contatos2
+        parentColumnName: email
+
       - name: idade
         type: integer
         length: 210
@@ -16,9 +19,148 @@
         type: varchar
         length: 420
         
-      - name: batata
+      - name: batata1
         type: vachar2
         length: 600
     
+      - name: batata2
+        type: vachar2
+        length: 600
     
+      - name: batata3
+        type: vachar2
+        length: 600
     
+      - name: batata4
+        type: vachar2
+        length: 600
+    
+      - name: batata5
+        type: vachar2
+        length: 600
+    
+      - name: batata6
+        type: vachar2
+        length: 600
+    
+      - name: batata7
+        type: vachar2
+        length: 600
+    
+      - name: batata8
+        type: vachar2
+        length: 600
+    
+      - name: batata9
+        type: vachar2
+        length: 600
+
+      - name: batata10
+        type: vachar2
+        length: 600
+
+      - name: batata11
+        type: vachar2
+        length: 600
+
+      - name: batata12
+        type: vachar2
+        length: 600
+
+      - name: batata13
+        type: vachar2
+        length: 600
+
+      - name: batata14
+        type: vachar2
+        length: 600
+
+      - name: batata15
+        type: vachar2
+        length: 600
+
+      - name: batata16
+        type: vachar2
+        length: 600
+
+      - name: batata17
+        type: vachar2
+        length: 600
+
+      - name: batata18
+        type: vachar2
+        length: 600
+
+      - name: batata19
+        type: vachar2
+        length: 600
+        pk: true
+
+      - name: batata20
+        type: vachar2
+        length: 600
+
+      - name: batata21
+        type: vachar2
+        length: 600
+
+      - name: batata22
+        type: vachar2
+        length: 600
+
+      - name: batata23
+        type: vachar2
+        length: 600
+        pk: true
+
+      - name: batata24
+        type: vachar2
+        length: 600
+
+      - name: batata25
+        type: vachar2
+        length: 600
+
+      - name: batata26
+        type: vachar2
+        length: 600
+
+      - name: batata27
+        type: vachar2
+        length: 600
+
+      - name: batata28
+        type: vachar2
+        length: 600
+
+      - name: batata29
+        type: vachar2
+        length: 600
+
+      - name: batata30
+        type: vachar2
+        length: 600
+
+      - name: batata31
+        type: vachar2
+        length: 600
+
+      - name: batata32
+        type: vachar2
+        length: 600
+
+      - name: batata33
+        type: vachar2
+        length: 600
+
+      - name: batata33
+        type: vachar2
+        length: 600
+
+      - name: batata34
+        type: vachar2
+        length: 600
+
+      - name: batata35
+        type: vachar2
+        length: 600
